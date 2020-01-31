@@ -4,15 +4,32 @@ Performance benchmarks comparing various telemetry projects.
 
 This repository exists to provide benchmarks of popular logging libraries to compare against logging using the API in `x/tools/internal/telemetry`.
 
-## Running the benchmarks
+## Benchmarking Locally
+This section is based on the instructions in [this](https://go-review.googlesource.com/c/tools/+/212078) CL.
+### Running these benchmarks
+1. In the root directory of this repository, run the following command:
+> go test -run=^$ -bench=. -count=10
+2. Place each benchmark's output in its own file (e.g. `stdlog.txt`, `zerolog.txt`, etc).
+3. Ensure all benchmark results have a common name (e.g. s/BenchmarkLoggingStdlib/BenchmarkIt/g).
 
-1. Follow the instructions [here](https://go-review.googlesource.com/c/tools/+/212078) to get results for no logging, std logging, and `internal/telemetry` logging.
-2. Run the following command to get results for third party loggers:
-    > go test -run=^$ -bench=. -count=10
 
+
+### Benchmarking `internal/telemetry`
+1. Clone the [tools](https://golang.org/x/tools) subrepository.
+2. Inside the repository, `cd` to `internal/telemetry/log`.
+3. Run the following command to obtain results:
+> go test -run=^$ -bench=. -count=10
+4. Retrieve results for the benchmarks you are interested in and store them according to the previous instructions.
+
+### Comparing Results
+All results can be compared using benchstat:
+> benchstat no_log.txt stdlog.txt tellog.txt zerolog.txt
+
+Two results can also be compared to show percent change:
+> benchstat stdlog.txt tellog.txt
 ## Benchstat Results
 Below is a comparison of the results for each logger, obtained using benchstat. These results were obtained on a machine running Ubuntu 18.04 with an i5-6300HQ and 16GB DDR4-2133 memory.
-> benchstat no_log.txt stdlog.txt tellog.txt zerolog.txt
+
 
 
 
