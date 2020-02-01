@@ -7,10 +7,12 @@ This repository exists to provide benchmarks of popular logging libraries to com
 ## Benchmarking Locally
 This section is based on the instructions in [this](https://go-review.googlesource.com/c/tools/+/212078) CL.
 ### Running these benchmarks
-1. In the root directory of this repository, run the following command:
+1. Get this repository:
+> go get -t -d -u github.com/kirbyquerby/go-logger-benchmarks
+2. In the root directory of this repository, run the following command:
 > go test -run=^$ -bench=. -count=10
-2. Place each benchmark's output in its own file (e.g. `stdlog.txt`, `zerolog.txt`, etc).
-3. Ensure all benchmark results have a common name (e.g. s/BenchmarkLoggingStdlib/BenchmarkIt/g).
+3. Place each benchmark's output in its own file (e.g. `stdlog.txt`, `zerolog.txt`, etc).
+4. Ensure all benchmark results have a common name (e.g. s/BenchmarkLoggingStdlib/BenchmarkIt/g).
 
 
 
