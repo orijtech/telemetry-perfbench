@@ -5,14 +5,14 @@ import (
 	"testing"
 )
 
-func A(a int) int {
+func a(a int) int {
 	if a > 0 {
 		_ = 10 * 12
 	}
-	return B("Called from A")
+	return b("Called from A")
 }
 
-func B(b string) int {
+func b(b string) int {
 	b = strings.ToUpper(b)
 	if len(b) > 1024 {
 		b = strings.ToLower(b)
@@ -20,5 +20,5 @@ func B(b string) int {
 	return len(b)
 }
 func BenchmarkNoTracingNoMetricsNoLogging(b *testing.B) {
-	RunBenchmark(b, A)
+	RunBenchmark(b, a)
 }

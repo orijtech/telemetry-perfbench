@@ -9,16 +9,16 @@ import (
 	"go.uber.org/zap/zapcore"
 )
 
-func A_log_zap_sugared(logger *zap.SugaredLogger, a int) int {
+func a_log_zap_sugared(logger *zap.SugaredLogger, a int) int {
 	if a > 0 {
 		logger.Infof("a > 0 where a=%d", a)
 		_ = 10 * 12
 	}
 	logger.Info("calling b")
-	return B_log_zap_sugared(logger, "Called from A")
+	return b_log_zap_sugared(logger, "Called from A")
 }
 
-func B_log_zap_sugared(logger *zap.SugaredLogger, b string) int {
+func b_log_zap_sugared(logger *zap.SugaredLogger, b string) int {
 	b = strings.ToUpper(b)
 	logger.Infof("b uppercased, so lowercased where len_b=%d", len(b))
 	if len(b) > 1024 {
@@ -54,6 +54,6 @@ func newZapLogger(lvl zapcore.Level) *zap.Logger {
 func BenchmarkLoggingZapSugared(b *testing.B) {
 	logger := newZapLogger(zap.DebugLevel).Sugar()
 	RunBenchmark(b, func(a int) int {
-		return A_log_zap_sugared(logger, a)
+		return a_log_zap_sugared(logger, a)
 	})
 }

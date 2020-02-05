@@ -11,16 +11,16 @@ func init() {
 	stdlog.SetOutput(ioutil.Discard)
 }
 
-func A_log_stdlib(a int) int {
+func a_log_stdlib(a int) int {
 	if a > 0 {
 		stdlog.Printf("a > 0 where a=%d", a)
 		_ = 10 * 12
 	}
 	stdlog.Print("calling b")
-	return B_log_stdlib("Called from A")
+	return b_log_stdlib("Called from A")
 }
 
-func B_log_stdlib(b string) int {
+func b_log_stdlib(b string) int {
 	b = strings.ToUpper(b)
 	stdlog.Printf("b uppercased, so lowercased where len_b=%d", len(b))
 	if len(b) > 1024 {
@@ -30,5 +30,5 @@ func B_log_stdlib(b string) int {
 	return len(b)
 }
 func BenchmarkLoggingStdlib(b *testing.B) {
-	RunBenchmark(b, A_log_stdlib)
+	RunBenchmark(b, a_log_stdlib)
 }
