@@ -52,7 +52,7 @@ func newZapLogger(lvl zapcore.Level) *zap.Logger {
 }
 
 func BenchmarkLoggingZapSugared(b *testing.B) {
-	logger := newZapLogger(zap.DebugLevel).Sugar()
+	logger := newZapLogger(zap.InfoLevel).Sugar()
 	RunBenchmark(b, func(a int) int {
 		return a_log_zap_sugared(logger, a)
 	})
