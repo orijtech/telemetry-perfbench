@@ -30,7 +30,7 @@ All results can be compared using benchstat:
 Two results can also be compared to show percent change:
 > benchstat stdlog.txt tellog.txt
 ## Benchstat Results
-Below is a comparison of the results for each logger, obtained using benchstat. These results were obtained on a machine running Linux Mint 19 with an i7-8086K@5.0ghz and 32GB DDR4-3200 memory.
+Below is a comparison of the results for each logger, obtained using benchstat. These results were obtained on a machine running Linux Mint 19 with an i7-8086K @ 5.0ghz and 32GB DDR4-3200 memory.
 
 
 
