@@ -11,12 +11,6 @@ func init() {
 	stdlog.SetOutput(ioutil.Discard)
 }
 
-type noopWriter int
-
-func (nw *noopWriter) Write(b []byte) (int, error) {
-	return len(b), nil
-}
-
 func A_log_stdlib(a int) int {
 	if a > 0 {
 		stdlog.Printf("a > 0 where a=%d", a)
