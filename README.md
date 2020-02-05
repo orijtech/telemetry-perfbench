@@ -25,7 +25,7 @@ This section is based on the instructions in [this](https://go-review.googlesour
 
 ### Comparing Results
 All results can be compared using benchstat:
-> benchstat no_log.txt stdlog.txt tellog.txt zerolog.txt zap_sugared.txt
+> benchstat no_log.txt stdlog.txt tellog.txt zerolog.txt zap_sugared.txt logrus.txt
 
 Two results can also be compared to show percent change:
 > benchstat stdlog.txt tellog.txt
