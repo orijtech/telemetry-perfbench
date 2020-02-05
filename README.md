@@ -35,13 +35,14 @@ Below is a comparison of the results for each logger, obtained using benchstat. 
 
 
 
-| test       | time/op     | alloc/op    | allocs/op      |
-|------------|-------------|-------------|----------------|
-|no_log      | 216ns ± 1%  | 80.0B ± 0%  | 5.00 ± 0%      |
-|stdlog      | 3805ns ± 4% | 568.0B ± 0% | 28.00 ± 0%     |
-|tellog      | 2215ns ± 3% | 728.0B ± 0% | 32.00 ± 0%     |
-|zap_sugared | 6238ns ± 1% | 569.0B ± 0% | 28.00 ± 0%     |
-|zerolog     | 2282ns ± 1% | 488.0B ± 0% | 23.00 ± 0%     |
+| test        | time/op     | alloc/op    | allocs/op  |
+|-------------|-------------|-------------|------------|
+| logrus      | 22.3µs ± 2% | 6.73kB ± 0% | 228 ± 0%   |
+| no_log      | 221ns ± 4%  | 80.0B ± 0%  | 5.00 ± 0%  |
+| stdlog      | 3821ns ± 3% | 568.0B ± 0% | 28.00 ± 0% |
+| tellog      | 2222ns ± 5% | 728.0B ± 0% | 32.00 ± 0% |
+| zap_sugared | 6257ns ± 1% | 569.0B ± 0% | 28.00 ± 0% |
+| zerolog     | 2267ns ± 0% | 488.0B ± 0% | 23.00 ± 0% |
 
 ## Comments
 
