@@ -8,7 +8,7 @@ This repository exists to provide benchmarks of popular logging libraries to com
 This section is based on the instructions in [this](https://go-review.googlesource.com/c/tools/+/212078) CL.
 ### Running these benchmarks
 1. Get this repository:
-> go get -t -d -u github.com/kirbyquerby/go-logger-benchmarks
+> go get -t -d -u github.com/orijtech/telemetry-perfbench
 2. In the root directory of this repository, run the following command:
 > go test -run=^$ -bench=. -count=10
 3. Place each benchmark's output in its own file (e.g. `stdlog.txt`, `zerolog.txt`, etc).
